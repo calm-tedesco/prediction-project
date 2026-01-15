@@ -1,6 +1,8 @@
 The goal is to make monthly predictions out of some energy production data from windmills.
 
-It is the most complete demonstration of what I can achieve in C++. The content is in Spanish and it is pretty inconvenient to translate it all, and I would do some things differently now. Please, notice:
+WIP: Translating to Spanish and completing it a bit more.
+
+It is the most complete demonstration of what I can achieve in C++. Please, notice:
 
 - Proper organization of the project in a directory tree structure and use of Makefile.
 - Use of templates and lambda expressions.
