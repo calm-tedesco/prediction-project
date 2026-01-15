@@ -1,6 +1,6 @@
 The goal is to make monthly predictions out of some energy production data from windmills.
 
-WIP: Translating to Spanish and completing it a bit more.
+⚠️ WIP: Translating to Spanish and refactoring.
 
 It is the most complete demonstration of what I can achieve in C++. Please, notice:
 
