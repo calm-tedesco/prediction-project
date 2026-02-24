@@ -9,33 +9,33 @@ CXX = g++
 CPPFLAGS = -I$(INC) -std=c++11
 
 
-all: $(BIN)/ejercicio1
+all: $(BIN)/exercise1
 
-ejercicio: $(BIN)/ejercicio1
-	$(BIN)/ejercicio1 data/Meteologica_vacante_ProgC_ProblemaDatos_20190903.txt
+exercise: $(BIN)/exercise1
+	$(BIN)/exercise1 ./data/wind_data.txt
 
-# ************ Generación de documentación ******************
-documentacion: 
+# ************ Doc generation ******************
+doc: 
 	doxygen $(DOC)/Doxyfile
 
-# ************ Compilación de módulos ************
-$(BIN)/ejercicio1: $(OBJ)/main.o $(LIB)/libutilidades.a
-	$(CXX) $(OBJ)/main.o -L$(LIB) -lutilidades -o $(BIN)/ejercicio1
+# ************ Modules compilation ************
+$(BIN)/exercise1: $(OBJ)/main.o $(LIB)/libutilities.a
+	$(CXX) $(OBJ)/main.o -L$(LIB) -lutilities -o $(BIN)/exercise1
 
 $(OBJ)/main.o: $(SRC)/main.cpp
 	$(CXX) -c $(SRC)/main.cpp -o $(OBJ)/main.o $(CPPFLAGS)
 
-$(LIB)/libutilidades.a: $(OBJ)/deming.o
-	ar rvs $(LIB)/libutilidades.a $(OBJ)/deming.o
+$(LIB)/libutilities.a: $(OBJ)/deming.o
+	ar rvs $(LIB)/libutilities.a $(OBJ)/deming.o
 
 $(OBJ)/deming.o: $(SRC)/deming.cpp
 	$(CXX) -c $(SRC)/deming.cpp -o $(OBJ)/deming.o $(CPPFLAGS)
 
-# ************ Limpieza ************
+# ************ Cleaning ************
 clean:
-	echo "Limpieza de archivos objeto y biblioteca..."
+	echo "Cleaning object files and libraries..."
 	rm $(OBJ)/*.o $(LIB)/*.a
 
 mrproper: clean
-	echo "Limpieza de ejecutables..."
+	echo "Cleaning executable..."
 	rm $(BIN)/*
